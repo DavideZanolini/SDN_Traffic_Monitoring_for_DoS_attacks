@@ -20,11 +20,15 @@ The main objectives of this project are:
 
 To get started with the project, follow the instructions in the `ml_model_training/README.md` file to set up your environment and run the necessary scripts.
 
-## Folder Structure
+## Folder Structure of ml_model_training
 
 - `data/`: Contains the data used for training and testing the machine learning models.
 - `ml_model_training/`: Includes scripts and instructions for training the machine learning models.
 - `tools/`: Contains utility scripts for processing data and testing the models.
+
+## Folder Structure of dos_detection
+
+
 
 ## Requirements
 

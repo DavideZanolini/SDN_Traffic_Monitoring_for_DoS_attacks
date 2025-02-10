@@ -1,0 +1,7 @@
+2025-02-09 21:45:32.820951 [process_pcap.py]: An error occurred while processing pcap file /tmp/capture_214532.pcap: No data could be read!
+2025-02-09 21:45:32.824762 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_214532.pcap'
+2025-02-09 21:46:03.191470 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_214532.pcap'
+2025-02-09 21:46:34.271586 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_214632.pcap'
+2025-02-09 21:47:03.710654 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_213949.pcap'
+2025-02-09 21:47:34.099051 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_213849.pcap'
+2025-02-09 21:48:03.420144 [process_pcap.py]: An error occurred: [Errno 2] No such file or directory: 'capture_214049.pcap'

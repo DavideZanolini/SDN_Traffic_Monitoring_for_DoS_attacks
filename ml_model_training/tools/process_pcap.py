@@ -41,8 +41,6 @@ def pcap_to_csv(pcap_file, csv_file, exclude_non_tcp=False):
             
             if label == "0":
                 normal_packets += 1
-                # Increase sbytes by a random value between 500 and 800
-                sbytes += random.randint(500, 800)
             else:
                 malicious_packets += 1
             

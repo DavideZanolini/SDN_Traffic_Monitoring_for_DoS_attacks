@@ -1,0 +1,91 @@
+2025-02-09 21:45:05.196591 [cap_main.py]: Monitoring /tmp for new pcap and csv files...
+2025-02-09 21:45:32.260262 [cap_main.py]: New pcap file detected: /tmp/capture_214532.pcap
+2025-02-09 21:45:32.261717 [cap_main.py]: Processing pcap file: /tmp/capture_214532.pcap
+2025-02-09 21:45:32.815645 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:45:32.818327 [process_pcap.py]: Reading pcap file: /tmp/capture_214532.pcap
+2025-02-09 21:45:32.822913 [process_pcap.py]: CSV file saved as /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:02.278650 [cap_main.py]: New pcap file detected: /tmp/capture_214602.pcap
+2025-02-09 21:46:02.282476 [cap_main.py]: Processing pcap file: /tmp/capture_214602.pcap
+2025-02-09 21:46:02.947532 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:46:02.950459 [process_pcap.py]: Reading pcap file: /tmp/capture_214532.pcap
+2025-02-09 21:46:03.159113 [process_pcap.py]: Total packets read: 517
+2025-02-09 21:46:03.184267 [process_pcap.py]: Total packets processed: 294
+2025-02-09 21:46:03.186203 [process_pcap.py]: Non-TCP packets excluded: 223
+2025-02-09 21:46:03.188173 [process_pcap.py]: Deleted pcap file: /tmp/capture_214532.pcap
+2025-02-09 21:46:03.189585 [process_pcap.py]: CSV file saved as /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:03.483282 [cap_main.py]: New CSV file detected: /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:03.484755 [cap_main.py]: Processing pcap file: /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:03.919401 [process_csv.py]: Processing CSV file...
+2025-02-09 21:46:03.923994 [process_csv.py]: Loaded CSV file: /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:03.927938 [process_csv.py]: Loaded JSON model: /home/comnetsemu/shared/capturing_traffic_in_SDN/first_topology/cap_scripts/forest_model.json
+2025-02-09 21:46:03.946235 [process_csv.py]: Made predictions on the data
+2025-02-09 21:46:03.950021 [process_csv.py]: No malicious packets found.
+2025-02-09 21:46:03.951911 [process_csv.py]: Deleted CSV file: /tmp/capture_214532_tcp_only.csv
+2025-02-09 21:46:32.397152 [cap_main.py]: New pcap file detected: /tmp/capture_214632.pcap
+2025-02-09 21:46:32.405447 [cap_main.py]: Processing pcap file: /tmp/capture_214632.pcap
+2025-02-09 21:46:33.456046 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:46:33.458502 [process_pcap.py]: Reading pcap file: /tmp/capture_214632.pcap
+2025-02-09 21:46:34.150916 [process_pcap.py]: Total packets read: 1508
+2025-02-09 21:46:34.245068 [process_pcap.py]: Total packets processed: 967
+2025-02-09 21:46:34.249419 [process_pcap.py]: Non-TCP packets excluded: 541
+2025-02-09 21:46:34.262687 [process_pcap.py]: Deleted pcap file: /tmp/capture_214632.pcap
+2025-02-09 21:46:34.266615 [process_pcap.py]: CSV file saved as /tmp/capture_214632_tcp_only.csv
+2025-02-09 21:46:34.560625 [cap_main.py]: New CSV file detected: /tmp/capture_214632_tcp_only.csv
+2025-02-09 21:46:34.562672 [cap_main.py]: Processing pcap file: /tmp/capture_214632_tcp_only.csv
+2025-02-09 21:46:34.962130 [process_csv.py]: Processing CSV file...
+2025-02-09 21:46:34.974685 [process_csv.py]: Loaded CSV file: /tmp/capture_214632_tcp_only.csv
+2025-02-09 21:46:34.982242 [process_csv.py]: Loaded JSON model: /home/comnetsemu/shared/capturing_traffic_in_SDN/first_topology/cap_scripts/forest_model.json
+2025-02-09 21:46:35.056764 [process_csv.py]: Made predictions on the data
+2025-02-09 21:46:35.062284 [process_csv.py]: No malicious packets found.
+2025-02-09 21:46:35.064086 [process_csv.py]: Deleted CSV file: /tmp/capture_214632_tcp_only.csv
+2025-02-09 21:47:02.409592 [cap_main.py]: New pcap file detected: /tmp/capture_214702.pcap
+2025-02-09 21:47:02.412036 [cap_main.py]: Processing pcap file: /tmp/capture_214702.pcap
+2025-02-09 21:47:03.686670 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:47:03.692273 [process_pcap.py]: Reading pcap file: /tmp/capture_213949.pcap
+2025-02-09 21:47:03.696298 [process_pcap.py]: Total packets read: 1
+2025-02-09 21:47:03.700669 [process_pcap.py]: Total packets processed: 0
+2025-02-09 21:47:03.703125 [process_pcap.py]: Non-TCP packets excluded: 1
+2025-02-09 21:47:03.705602 [process_pcap.py]: Deleted pcap file: /tmp/capture_213949.pcap
+2025-02-09 21:47:03.707603 [process_pcap.py]: CSV file saved as /tmp/capture_213949_tcp_only.csv
+2025-02-09 21:47:04.040804 [cap_main.py]: New CSV file detected: /tmp/capture_213949_tcp_only.csv
+2025-02-09 21:47:04.044363 [cap_main.py]: Processing pcap file: /tmp/capture_213949_tcp_only.csv
+2025-02-09 21:47:04.790270 [process_csv.py]: Processing CSV file...
+2025-02-09 21:47:04.799513 [process_csv.py]: Loaded CSV file: /tmp/capture_213949_tcp_only.csv
+2025-02-09 21:47:04.804267 [process_csv.py]: Loaded JSON model: /home/comnetsemu/shared/capturing_traffic_in_SDN/first_topology/cap_scripts/forest_model.json
+2025-02-09 21:47:04.807729 [process_csv.py]: Made predictions on the data
+2025-02-09 21:47:04.812544 [process_csv.py]: No malicious packets found.
+2025-02-09 21:47:04.817493 [process_csv.py]: Deleted CSV file: /tmp/capture_213949_tcp_only.csv
+2025-02-09 21:47:32.443597 [cap_main.py]: New pcap file detected: /tmp/capture_214732.pcap
+2025-02-09 21:47:32.446508 [cap_main.py]: Processing pcap file: /tmp/capture_214732.pcap
+2025-02-09 21:47:34.063732 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:47:34.068086 [process_pcap.py]: Reading pcap file: /tmp/capture_213849.pcap
+2025-02-09 21:47:34.075317 [process_pcap.py]: Total packets read: 0
+2025-02-09 21:47:34.084238 [process_pcap.py]: Total packets processed: 0
+2025-02-09 21:47:34.086874 [process_pcap.py]: Non-TCP packets excluded: 0
+2025-02-09 21:47:34.090950 [process_pcap.py]: Deleted pcap file: /tmp/capture_213849.pcap
+2025-02-09 21:47:34.093797 [process_pcap.py]: CSV file saved as /tmp/capture_213849_tcp_only.csv
+2025-02-09 21:47:34.448827 [cap_main.py]: New CSV file detected: /tmp/capture_213849_tcp_only.csv
+2025-02-09 21:47:34.451788 [cap_main.py]: Processing pcap file: /tmp/capture_213849_tcp_only.csv
+2025-02-09 21:47:34.993374 [process_csv.py]: Processing CSV file...
+2025-02-09 21:47:35.002954 [process_csv.py]: Loaded CSV file: /tmp/capture_213849_tcp_only.csv
+2025-02-09 21:47:35.009305 [process_csv.py]: Loaded JSON model: /home/comnetsemu/shared/capturing_traffic_in_SDN/first_topology/cap_scripts/forest_model.json
+2025-02-09 21:47:35.013519 [process_csv.py]: Made predictions on the data
+2025-02-09 21:47:35.018510 [process_csv.py]: No malicious packets found.
+2025-02-09 21:47:35.023059 [process_csv.py]: Deleted CSV file: /tmp/capture_213849_tcp_only.csv
+2025-02-09 21:48:02.477500 [cap_main.py]: New pcap file detected: /tmp/capture_214802.pcap
+2025-02-09 21:48:02.479875 [cap_main.py]: Processing pcap file: /tmp/capture_214802.pcap
+2025-02-09 21:48:03.400520 [process_pcap.py]: Processing pcap files...
+2025-02-09 21:48:03.403983 [process_pcap.py]: Reading pcap file: /tmp/capture_214049.pcap
+2025-02-09 21:48:03.406646 [process_pcap.py]: Total packets read: 0
+2025-02-09 21:48:03.409386 [process_pcap.py]: Total packets processed: 0
+2025-02-09 21:48:03.411645 [process_pcap.py]: Non-TCP packets excluded: 0
+2025-02-09 21:48:03.415103 [process_pcap.py]: Deleted pcap file: /tmp/capture_214049.pcap
+2025-02-09 21:48:03.417160 [process_pcap.py]: CSV file saved as /tmp/capture_214049_tcp_only.csv
+2025-02-09 21:48:03.645741 [cap_main.py]: New CSV file detected: /tmp/capture_214049_tcp_only.csv
+2025-02-09 21:48:03.648887 [cap_main.py]: Processing pcap file: /tmp/capture_214049_tcp_only.csv
+2025-02-09 21:48:04.123810 [process_csv.py]: Processing CSV file...
+2025-02-09 21:48:04.134926 [process_csv.py]: Loaded CSV file: /tmp/capture_214049_tcp_only.csv
+2025-02-09 21:48:04.140388 [process_csv.py]: Loaded JSON model: /home/comnetsemu/shared/capturing_traffic_in_SDN/first_topology/cap_scripts/forest_model.json
+2025-02-09 21:48:04.144226 [process_csv.py]: Made predictions on the data
+2025-02-09 21:48:04.150559 [process_csv.py]: No malicious packets found.
+2025-02-09 21:48:04.153351 [process_csv.py]: Deleted CSV file: /tmp/capture_214049_tcp_only.csv
