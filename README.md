@@ -43,12 +43,18 @@ To get started with the project, follow the instructions in the `ml_model_traini
 
 This project is divided in two parts: ml_model_training and dos_detection. In each folder you will find a guide on how to train the model and how to use it on comnetsemu.
 
-### Using ComNetsEmu and Mininet
+## Using ComNetsEmu and Mininet
 
 We used ComNetsEmu and Mininet to create a simulated network environment for testing and validating our solutions. ComNetsEmu extends Mininet with additional features for network experimentation, making it ideal for our project.
 
-To set up ComNetsEmu, follow the instructions provided in the respective folders.
+### Setting Up ComNetsEmu
 
+1. **Install ComNetsEmu**:
+   Follow the installation instructions from the [ComNetsEmu GitHub repository](https://github.com/stevelorenz/comnetsemu).
+
+2. **Copy DoS detection**:
+    Copy the dos_detection folder in you virtual machine and follow the instruction written on the readme contained in that folder
+ 
 ## Contributors
 
 - Your Name (your.email@example.com)
