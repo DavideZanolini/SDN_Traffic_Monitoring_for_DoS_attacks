@@ -60,7 +60,12 @@ We used ComNetsEmu and Mininet to create a simulated network environment for tes
 
 2. **Copy DoS detection**:
     Copy the dos_detection folder in you virtual machine and follow the instruction written on the readme contained in that folder
- 
+
+## Future Works
+
+- **Mitigation System**: We plan to add a mitigation system where `check_malicious_packets.py` can send a REST API request to the controller to take action against malicious hosts.
+- **Model Improvement**: We aim to improve our machine learning model to ensure better generalization and performance on unseen data.
+
 ## Contributors
 
 - Alessandro Paladin ()
