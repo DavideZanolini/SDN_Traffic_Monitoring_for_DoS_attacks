@@ -44,7 +44,7 @@ Principal Component Analysis (PCA) is a dimensionality reduction technique that 
 
 The Random Forest model was trained on data from Network 1 and tested on data from Network 2, yielding the following performance metrics:
 
-![PCA](ml_model_training\media\model_performance.png)
+![Performance](media\model_performance.png)
 
 These results indicate that the model performs very well, with high accuracy and balanced precision-recall values. However, the presence of overfitting is a concern, as the dataset is not particularly large. This suggests that the model may not generalize well to unseen network traffic and could benefit from additional data or regularization techniques.
 
