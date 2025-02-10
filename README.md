@@ -7,7 +7,7 @@ This project was developed as part of the Networking 2 course at the University 
 The main objectives of this project are:
 - **Traffic Monitoring**: Monitor network traffic in real-time to detect anomalies and potential DoS attacks.
 - **Machine Learning**: Use machine learning algorithms to analyze network traffic patterns and predict potential threats.
-- **DoS Attack Mitigation**: Implement strategies to mitigate the impact of detected DoS attacks.
+- **DoS Attack Mitigation** (work in progress): Implement strategies to mitigate the impact of detected DoS attacks.
 - **Simulated Infrastructure**: Create a simulated network environment to test and validate the effectiveness of the implemented solutions.
 
 ## Features
@@ -28,7 +28,9 @@ To get started with the project, follow the instructions in the `ml_model_traini
 
 ## Folder Structure of dos_detection
 
-
+- `first_topology/`: Contains scripts and configurations for the first network.
+- `second_topology/`: Contains scripts and configurations for the second network.
+- `requirements.txt`: Lists the Python libraries required to run the scripts.
 
 ## Requirements
 
@@ -61,4 +63,6 @@ We used ComNetsEmu and Mininet to create a simulated network environment for tes
  
 ## Contributors
 
-- Your Name (your.email@example.com)
+- Alessandro Paladin ()
+- Matteo Lorenzoni ()
+- Davide Zanolini (zanolinidavide@gmail.com)
