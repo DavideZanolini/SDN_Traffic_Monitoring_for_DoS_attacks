@@ -17,7 +17,8 @@ def pcap_to_csv(pcap_file, csv_file, exclude_non_tcp=False):
     with open(csv_file, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([
-            "id", "source_ip", "dur", "spkts", "sbytes", "sttl", "swin", "stcpb", "dtcpb", "rate", "pps", "bpp", "ttl_ratio", "tcp_diff", "swin_interaction", "label"
+            "id", "source_ip", "dur", "spkts", "sbytes", "sttl", "swin", "stcpb", "dtcpb", 
+            "rate", "pps", "bpp", "ttl_ratio", "tcp_diff", "swin_interaction", "label"
         ])
         
         for i, packet in enumerate(packets):

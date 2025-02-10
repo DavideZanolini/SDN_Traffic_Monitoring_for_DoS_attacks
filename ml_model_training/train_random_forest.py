@@ -5,12 +5,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, classification_report
-import m2cgen as m2c
+import joblib
 import json
 
-def train_and_save_forest(train_data_path, test_data_path=None, model_save_path="forest_model.py", scaler_params_path="scaler_params.json"):
+def train_and_save_forest(train_data_path, test_data_path=None, model_save_path="forest_model.joblib", scaler_params_path="scaler_params.json"):
     """
-    Trains a Random Forest classifier and saves its structure as Python code.
+    Trains a Random Forest classifier and saves its structure as a joblib file.
     """
     print("Loading training dataset...")
     train_df = pd.read_csv(train_data_path)
@@ -69,17 +69,13 @@ def train_and_save_forest(train_data_path, test_data_path=None, model_save_path=
     print("Classification Report:")
     print(class_report)
 
-    # Generate Python code for the model
-    print("Generating Python code for the model...")
-    model_code = m2c.export_to_python(model)
-
-    # Save the generated code to a file
-    with open(model_save_path, "w") as f:
-        f.write(model_code)
-
+    # Save the model as a joblib file
+    print("Saving the model as a joblib file...")
+    joblib.dump(model, model_save_path)
     print(f"Random Forest model saved to {model_save_path}")
 
 if __name__ == "__main__":
+
     data_dir = "../data/csv_files/"  
 
     train_file_name = input("Enter the name of the training CSV file: ")
@@ -91,6 +87,6 @@ if __name__ == "__main__":
     print(f"\nTraining model with data from: {train_data_path}")
     print(f"Testing model with data from: {test_data_path}")
 
-    model_save_path = "forest_model.py"
+    model_save_path = "forest_model.joblib"
     scaler_params_path = "scaler_params.json"
     train_and_save_forest(train_data_path, test_data_path, model_save_path, scaler_params_path)

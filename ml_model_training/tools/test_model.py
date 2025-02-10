@@ -16,16 +16,19 @@ def scale_features(features, scaler_params):
     return (features - mean) / scale
 
 def predict(data, model, scaler_params):
-    features = data[["id", "dur", "spkts", "sttl", "swin", "stcpb", "dtcpb", "pps", "ttl_ratio", "tcp_diff", "swin_interaction"]]
+    features = data[["id", "source_ip", "dur", "spkts", "sbytes", "sttl", "swin", "stcpb", "dtcpb", 
+            "rate", "pps", "bpp", "ttl_ratio", "tcp_diff", "swin_interaction", "label"]]
     features_array = features.to_numpy()
     scaled_features = scale_features(features_array, scaler_params)
     predictions = model.predict(scaled_features)
     return predictions
 
 if __name__ == "__main__":
-    csv_file = "file_of_the_data"
-    model_file = "file_of_the_model"
-    scaler_params_file = "C:/Users/zanol/Projects/SDN-traffic-predictor/ml_model_training/scaler_params.json"
+
+    # Update these paths with the actual file paths
+    csv_file = "path/to/your/csv_file.csv"
+    model_file = "path/to/your/model_file.joblib"
+    scaler_params_file = "path/to/your/scaler_params.json"
 
     data = load_csv(csv_file)
     model = joblib.load(model_file)
@@ -42,4 +45,5 @@ if __name__ == "__main__":
     print("First 10 predictions:")
     print(data[['id', 'prediction']].head(10))
     print("First 10 rows of features:")
-    print(data[["id", "dur", "spkts", "sttl", "swin", "stcpb", "dtcpb", "pps", "ttl_ratio", "tcp_diff", "swin_interaction"]].head(10))
+    print(data[["id", "source_ip", "dur", "spkts", "sbytes", "sttl", "swin", "stcpb", "dtcpb", 
+            "rate", "pps", "bpp", "ttl_ratio", "tcp_diff", "swin_interaction", "label"]].head(10))
