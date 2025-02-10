@@ -68,6 +68,6 @@ We used ComNetsEmu and Mininet to create a simulated network environment for tes
 
 ## Contributors
 
-- Alessandro Paladin ()
-- Matteo Lorenzoni ()
+- Alessandro Paladin (paladinalessandro@gmail.com)
+- Matteo Lorenzoni (matteo.lorenzoni_1@studenti.unitn.it)
 - Davide Zanolini (zanolinidavide@gmail.com)

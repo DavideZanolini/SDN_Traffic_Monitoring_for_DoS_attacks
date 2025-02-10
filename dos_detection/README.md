@@ -26,6 +26,16 @@ This folder contains scripts for detecting Denial-of-Service (DoS) attacks in a 
    pip install -r requirements.txt
    ```
 
+## Topology of the networks created
+
+### Topology 1:
+
+![Topology 1](media/network1.png)
+
+### Topology 2:
+
+![Topology 2](media/2.png)
+
 ## Usage
 
 ### Setting Up ComNetsEmu
