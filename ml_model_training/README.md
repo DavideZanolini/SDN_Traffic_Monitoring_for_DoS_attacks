@@ -2,15 +2,15 @@
 
 This folder of the project includes scripts for training a Random Forest classifier to predict network traffic patterns. The guide below explains how to set up and use a virtual environment to run `train_random_forest.py`. In order to use the script, you need to create the CSV files that contain the training and testing sets. To do so, place the pcap files that you created in `../data/captures`. Then follow the steps below:
 
-# Why Random Forest?
+## Why Random Forest?
 
 We chose a Random Forest classifier because it is an ensemble learning method that combines multiple decision trees to improve classification accuracy and reduce overfitting. Random Forest is robust to noise, works well with imbalanced datasets, and is efficient for network traffic classification. However, given that network traffic is inherently sequential, we are also exploring deep learning models, such as Recurrent Neural Networks (RNNs), for future iterations.
 
-# Dataset
+## Dataset
 
 The training process follows the structure of the UNSW-NB15 dataset, a benchmark dataset used for network intrusion detection. This dataset provides a mix of normal and malicious traffic, making it suitable for training a classifier to distinguish between benign and attack patterns.
 
-# Lableling process
+## Lableling process
 
 The parameters used for training were:
 
@@ -38,7 +38,9 @@ The parameters used for training were:
 
 Additionally, we successfully generated malicious packets that closely resembled normal traffic, ensuring better training and improved model performance.
 
-## 1. Create a Virtual Environment
+## How to train the random forest
+
+### 1. Create a Virtual Environment
 
 First, create a virtual environment in your project directory. Open a terminal and navigate to your project directory, then run:
 
@@ -46,7 +48,7 @@ First, create a virtual environment in your project directory. Open a terminal a
 python -m venv venv
 ```
 
-## 2. Activate the Virtual Environment
+### 2. Activate the Virtual Environment
 
 - **Windows**: 
   ```sh
@@ -57,13 +59,13 @@ python -m venv venv
   source venv/bin/activate
   ```
 
-## 3. Install Required Libraries
+### 3. Install Required Libraries
 
 ```sh
 pip install -r requirements.txt
 ```
 
-## 4. Run `process_pcap.py`
+### 4. Run `process_pcap.py`
 
 ```sh
 python tools/process_pcap.py
@@ -71,13 +73,13 @@ python tools/process_pcap.py
 
 Now you will find the dataset in `../data/csv_files`. Use this file to train the random forest model.
 
-## 5. Run `train_random_forest.py`
+### 5. Run `train_random_forest.py`
 
 ```sh
 python train_random_forest.py
 ```
 
-# How to Check the Performance of Your Model
+## How to Check the Performance of Your Model
 
 In the `tools` folder, you can find `test_model.py` to check if the model you created is functioning. Firstly, you need to change:
 
