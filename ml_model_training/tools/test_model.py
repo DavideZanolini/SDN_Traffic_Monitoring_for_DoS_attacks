@@ -23,8 +23,8 @@ def predict(data, model, scaler_params):
     return predictions
 
 if __name__ == "__main__":
-    csv_file = "C:/Users/zanol/Projects/SDN-traffic-predictor/data/csv_files/second_topology_tcp_only.csv"
-    model_file = "C:/Users/zanol/Projects/SDN-traffic-predictor/ml_model_training/forest_model.joblib"
+    csv_file = "file_of_the_data"
+    model_file = "file_of_the_model"
     scaler_params_file = "C:/Users/zanol/Projects/SDN-traffic-predictor/ml_model_training/scaler_params.json"
 
     data = load_csv(csv_file)
