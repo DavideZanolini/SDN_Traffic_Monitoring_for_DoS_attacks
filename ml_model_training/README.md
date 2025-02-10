@@ -40,15 +40,14 @@ Principal Component Analysis (PCA) is a dimensionality reduction technique that 
 
 ![PCA](media/pca.png)
 
-## Performance of our ml model
+## Performance of our ML Model
 
-Even though we get good results with the feature correlation matrix and the PCA, we achieve 1.0 precision and 1.0 recall. This indicates a potential issue with overfitting or data leakage. Possible causes of this problem could include:
+The Random Forest model was trained on data from Network 1 and tested on data from Network 2, yielding the following performance metrics:
 
-- **Overfitting**: The model might be too complex and is overfitting to the training data, capturing noise instead of the underlying pattern.
-- **Data Leakage**: There might be some information in the training data that is inadvertently being used to predict the target, leading to overly optimistic performance metrics.
-- **Imbalanced Dataset**: The dataset might be imbalanced, with a disproportionate number of normal versus malicious packets, leading to biased performance metrics.
+![PCA](ml_model_training\media\model_performance.png)
 
-This is a problem to solve in the future to ensure the model generalizes well to unseen data.
+These results indicate that the model performs very well, with high accuracy and balanced precision-recall values. However, the presence of overfitting is a concern, as the dataset is not particularly large. This suggests that the model may not generalize well to unseen network traffic and could benefit from additional data or regularization techniques.
+
 
 ## How to Train the Random Forest
 
