@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import datetime, timedelta
+import sys
 
 def log_attack(source_ip, count):
     with open('attack_log.txt', 'a') as log_file:
@@ -39,6 +40,8 @@ def detect_attacks(csv_file):
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    # Replace 'malicious_packets.csv' with the path to your CSV file
-    csv_file = 'malicious_packets.csv'
+    if len(sys.argv) < 2:
+        print("Usage: python check_malicious_packets.py <csv_file>")
+        sys.exit(1)
+    csv_file = sys.argv[1]
     detect_attacks(csv_file)
