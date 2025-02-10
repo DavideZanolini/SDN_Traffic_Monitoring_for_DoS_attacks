@@ -34,7 +34,7 @@ This folder contains scripts for detecting Denial-of-Service (DoS) attacks in a 
 
 ### Topology 2:
 
-![Topology 2](media/2.png)
+![Topology 2](media/network1.png)
 
 ## Usage
 
