@@ -83,6 +83,7 @@ python tools/process_pcap.py
 ```
 
 Now you will find the dataset in `../data/csv_files`. Use this file to train the random forest model.
+This command is for using a pcap file that you created, if you want to use a csv file that you created you can upload it in the `../data/csv_files`.
 
 ### 5. Run `train_random_forest.py`
 
