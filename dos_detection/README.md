@@ -57,12 +57,3 @@ To run attacks, you can use the `attack_launcher.py` script. For example, on `r1
 sudo apt-get install hping3
 sudo python3 attack_launcher.py
 ```
-
-## Contributors
-
-- Your Name (your.email@example.com)
-- Collaborator Name (collaborator.email@example.com)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

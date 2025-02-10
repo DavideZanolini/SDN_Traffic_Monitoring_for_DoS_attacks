@@ -10,35 +10,37 @@ We chose a Random Forest classifier because it is an ensemble learning method th
 
 The training process follows the structure of the UNSW-NB15 dataset, a benchmark dataset used for network intrusion detection. This dataset provides a mix of normal and malicious traffic, making it suitable for training a classifier to distinguish between benign and attack patterns.
 
-## Lableling process
+## Labeling Process
 
 The parameters used for training were:
 
 - id: Unique identifier for each packet, used to track individual packet instances in the dataset.
-
 - dur: Duration of the flow to which the packet belongs, providing temporal context for network activity.
-
 - spkts: Number of packets sent by the source, used to analyze traffic volume and potential anomalies.
-
 - sttl: Source Time-to-Live (TTL), which helps detect suspiciously short-lived connections.
-
 - swin: Source window size, providing insights into TCP congestion control and potential malicious behavior.
-
 - vstcpb: Initial sequence number of the source TCP segment, used to track TCP session characteristics.
-
 - dtcpb: Initial sequence number of the destination TCP segment, helping detect irregularities in session establishment.
-
 - pps: Packets per second, a critical feature for identifying high-rate traffic anomalies.
-
 - ttl_ratio: Ratio between source and destination TTL, used to detect TTL manipulation in attacks.
-
 - tcp_diff: Difference between TCP sequence numbers, indicating variations in packet sequencing.
-
 - swin_interaction: Interaction level of source window size, helping understand adaptive flow behavior.
 
 Additionally, we successfully generated malicious packets that closely resembled normal traffic, ensuring better training and improved model performance.
 
-## How to train the random forest
+## Feature Correlation Matrix
+
+A feature correlation matrix reveals the relationships between different features in the dataset, helping to identify those most associated with the target label. In our dataset, the features id, dur, sbytes, rate, pps, and ttl_ratio show the highest correlation with the label. However, none of them exhibit a particularly strong correlation, indicating that no single feature dominates in determining the label.
+
+![Feature Correlation Matrix](media/feature_correlation_matrix.png)
+
+## PCA of the Dataset
+
+Principal Component Analysis (PCA) is a dimensionality reduction technique that transforms the dataset into a set of orthogonal components, allowing us to visualize its variance. In our dataset, the malicious packets are mixed with the normal ones, indicating that PCA does not provide a clear separation between the two classes.
+
+![PCA](media/pca.png)
+
+## How to Train the Random Forest
 
 ### 1. Create a Virtual Environment
 
