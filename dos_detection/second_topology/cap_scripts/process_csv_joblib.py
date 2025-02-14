@@ -3,8 +3,9 @@ import json
 import sys
 import os
 import numpy as np
-from datetime import datetime, timedelta
+from datetime import datetime
 from collections import Counter
+import joblib
 
 SCRIPT_NAME = "process_csv.py"
 
@@ -33,60 +34,40 @@ def load_csv(csv_file):
         sys.exit(1)
 
 def load_model(model_file):
-    """
-    Loads the Random Forest JSON model.
-    The JSON is assumed to be a list of tree structures.
-    """
     try:
-        with open(model_file, 'r') as f:
-            model = json.load(f)
-        log_message(f"Loaded JSON model: {model_file}")
+        model = joblib.load(model_file)
+        log_message(f"Loaded model: {model_file}")
         return model
     except Exception as e:
-        error_message = f"An error occurred while loading the JSON model: {e}"
+        error_message = f"An error occurred while loading the model: {e}"
         log_error(error_message)
         sys.exit(1)
 
-def predict_tree(tree, X):
-    """
-    Traverses a single decision tree (from the JSON model) using feature vector X.
-    The tree structure uses:
-      - "feature": index of the feature used at the node (-2 for leaf)
-      - "threshold": threshold for decision
-      - "children_left"/"children_right": indices of child nodes
-      - "values": class distribution at the node
-    """
-    node = 0  # start at the root node
-    # A feature value of -2 indicates a leaf node.
-    while tree["feature"][node] != -2:
-        feature_index = tree["feature"][node]
-        threshold = tree["threshold"][node]
-        if X[feature_index] <= threshold:
-            node = tree["children_left"][node]
-        else:
-            node = tree["children_right"][node]
-    # Return the class with the highest vote at the leaf node.
-    return np.argmax(tree["values"][node])
+def load_scaler_params(scaler_params_file):
+    try:
+        with open(scaler_params_file, 'r') as f:
+            scaler_params = json.load(f)
+        log_message(f"Loaded scaler parameters: {scaler_params_file}")
+        return scaler_params
+    except Exception as e:
+        error_message = f"An error occurred while loading the scaler parameters: {e}"
+        log_error(error_message)
+        sys.exit(1)
 
-def predict_forest(forest, X):
-    """
-    Runs a prediction over all trees in the forest and returns the majority vote.
-    """
-    predictions = [predict_tree(tree, X) for tree in forest]
-    return Counter(predictions).most_common(1)[0][0]
+def scale_features(features, scaler_params):
+    mean = np.array(scaler_params["mean"])
+    scale = np.array(scaler_params["scale"])
+    return (features - mean) / scale
 
-def predict(data, model):
+def predict(data, model, scaler_params):
     try:
         # Extract the features used during training.
-        # (Adjust the list below if your training used a different set of features.)
         features = data[["id", "dur", "spkts", "sttl", "swin", 
                          "stcpb", "dtcpb", "pps", "ttl_ratio", "tcp_diff", "swin_interaction"]]
         
         features_array = features.to_numpy()
-        predictions = []
-        for row in features_array:
-            pred = predict_forest(model, row)
-            predictions.append(pred)
+        scaled_features = scale_features(features_array, scaler_params)
+        predictions = model.predict(scaled_features)
         
         data['prediction'] = predictions
         log_message("Made predictions on the data")
@@ -121,6 +102,7 @@ def update_malicious_csv(data, output_file):
 
 if __name__ == "__main__":
     print("Starting process_csv.py")
+    ensure_log_files_exist()
     log_message("Processing CSV file...")
     
     if len(sys.argv) != 2:
@@ -129,8 +111,8 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_file = sys.argv[1]
-    # Use the JSON file containing the Random Forest structure.
-    model_file = os.path.join(script_dir, "forest_model.json")
+    model_file = os.path.join(script_dir, "trained_model.joblib")
+    scaler_params_file = os.path.join(script_dir, "scaler_params.json")
     output_file = os.path.join(script_dir, "malicious_packets.csv")
 
     # Ensure the output file exists (creates a header if needed)
@@ -140,7 +122,8 @@ if __name__ == "__main__":
 
     data = load_csv(csv_file)
     model = load_model(model_file)
-    result = predict(data, model)
+    scaler_params = load_scaler_params(scaler_params_file)
+    result = predict(data, model, scaler_params)
 
     # Update the malicious packets CSV file with the new predictions.
     update_malicious_csv(result, output_file)

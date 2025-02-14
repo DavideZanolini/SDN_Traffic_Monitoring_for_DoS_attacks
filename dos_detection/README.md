@@ -38,6 +38,10 @@ This folder contains scripts for detecting Denial-of-Service (DoS) attacks in a 
 
 ## Usage
 
+### Note
+
+Our team had some issues with the use of joblib to load the model to make the prediction, due to an issue with numpy, that is required by the joblib library. In `cap_scripts` you can find `process_csv.py`, this file works without any problems but it isn't able to make any prediction on the data. In `process_csv_joblib.py` you will find the file that causes the numpy issue (numpy._core: module not found).
+
 ### Setting Up ComNetsEmu
 
 1. **Install ComNetsEmu**:
